@@ -1,0 +1,457 @@
+/*
+ *  Tiled Map Editor, (c) 2004-2006
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  Adam Turk <aturk@biggeruniverse.com>
+ *  Bjorn Lindeijer <b.lindeijer@xs4all.nl>
+ */
+
+package tiled.view;
+
+import java.awt.*;
+//import java.awt.geom.PathIterator;
+import java.util.Iterator;
+import java.util.Stack;
+
+import javax.swing.Scrollable;
+import javax.swing.JPanel;
+
+import tiled.core.*;
+import tiled.mapeditor.brush.Brush;
+import tiled.mapeditor.selection.SelectionLayer;
+
+/**
+ * The base class for map views. This is meant to be extended for different
+ * tile map orientations, such as orthagonal and isometric.
+ *
+ * @version $Id: MapView.java,v 1.1 2007/10/17 07:56:38 gulei Exp $
+ */
+public abstract class MapView extends JPanel implements Scrollable
+{
+    public static final int PF_BOUNDARYMODE = 0x02;
+    public static final int PF_COORDINATES  = 0x04;
+    public static final int PF_NOSPECIAL    = 0x08;
+
+    public static int ZOOM_NORMALSIZE = 5;
+
+    protected Map map;
+    protected Brush currentBrush;
+    protected int modeFlags;
+    protected double zoom = 1.0;
+    protected int zoomLevel = ZOOM_NORMALSIZE;
+
+    // Grid properties
+    protected boolean showGrid;
+    protected boolean antialiasGrid;
+    protected Color gridColor;
+    protected int gridOpacity;
+    
+    // 增加背景图片，为了保存Tile方便
+    protected Image background;
+
+    protected static double[] zoomLevels = {
+        0.0625, 0.125, 0.25, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 4.0
+    };
+
+    private static final Color DEFAULT_BACKGROUND_COLOR = new Color(64, 64, 64);
+    public static final Color DEFAULT_GRID_COLOR = Color.black;
+
+    /**
+     * Creates a new <code>MapView</code> that displays the specified map.
+     *
+     * @param map the map to be displayed by this map view
+     */
+    protected MapView(Map map) {
+        this.map = map;
+        background = null;
+    }
+    
+    public void setBackground(Image image){
+    	background = image;
+    }
+    
+    public Image getBackgroundImage(){
+    	return background;
+    }
+
+    public void toggleMode(int modeModifier) {
+        modeFlags ^= modeModifier;
+        revalidate();
+        repaint();
+    }
+
+    public void setMode(int modeModifier, boolean value) {
+        if (value) {
+            modeFlags |= modeModifier;
+        }
+        else {
+            modeFlags &= ~modeModifier;
+        }
+        revalidate();
+        repaint();
+    }
+
+    public boolean getMode(int modeModifier) {
+        return (modeFlags & modeModifier) != 0;
+    }
+
+    public void setGridColor(Color gridColor) {
+        this.gridColor = gridColor;
+        repaint();
+    }
+
+    public void setGridOpacity(int gridOpacity) {
+        this.gridOpacity = gridOpacity;
+        repaint();
+    }
+
+    public void setAntialiasGrid(boolean antialiasGrid) {
+        this.antialiasGrid = antialiasGrid;
+        repaint();
+    }
+
+    public boolean getShowGrid() {
+        return showGrid;
+    }
+
+    public void setShowGrid(boolean showGrid) {
+        this.showGrid = showGrid;
+        revalidate();
+        repaint();
+    }
+
+    /**
+     * Sets a new brush. The brush can draw a preview of the change while
+     * editing.
+     */
+    public void setBrush(Brush brush) {
+        currentBrush = brush;
+    }
+
+
+    // Zooming
+
+    public boolean zoomIn() {
+        if (zoomLevel < zoomLevels.length - 1) {
+            setZoomLevel(zoomLevel + 1);
+        }
+
+        return zoomLevel < zoomLevels.length - 1;
+    }
+
+    public boolean zoomOut() {
+        if (zoomLevel > 0) {
+            setZoomLevel(zoomLevel - 1);
+        }
+
+        return zoomLevel > 0;
+    }
+
+    public void setZoom(double zoom) {
+        if (zoom > 0) {
+            this.zoom = zoom;
+            setSize(getPreferredSize());
+        }
+    }
+
+    public void setZoomLevel(int zoomLevel) {
+        if (zoomLevel >= 0 && zoomLevel < zoomLevels.length) {
+            this.zoomLevel = zoomLevel;
+            setZoom(zoomLevels[zoomLevel]);
+        }
+    }
+
+    public double getZoom() {
+        return zoom;
+    }
+
+    public int getZoomLevel() {
+        return zoomLevel;
+    }
+
+
+    // Scrolling
+
+    public abstract Dimension getPreferredSize();
+
+    public Dimension getPreferredScrollableViewportSize() {
+        return getPreferredSize();
+    }
+
+    public boolean getScrollableTracksViewportHeight() {
+        return false;
+    }
+
+    public boolean getScrollableTracksViewportWidth() {
+        return false;
+    }
+
+    public abstract int getScrollableBlockIncrement(Rectangle visibleRect,
+            int orientation, int direction);
+
+    public abstract int getScrollableUnitIncrement(Rectangle visibleRect,
+            int orientation, int direction);
+
+    /**
+     * Creates a MapView instance that will render the map in the right
+     * orientation.
+     *
+     * @param p the Map to create a view for
+     * @return a suitable instance of a MapView for the given Map
+     * @see Map#getOrientation()
+     */
+    public static MapView createViewforMap(Map p) {
+        MapView mapView = null;
+
+        int orientation = p.getOrientation();
+
+        if (orientation == Map.MDO_ISO) {
+            mapView = new IsoMapView(p);
+        } else if (orientation == Map.MDO_ORTHO) {
+            mapView = new OrthoMapView(p);
+        } else if (orientation == Map.MDO_HEX) {
+            mapView = new HexMapView(p);
+        } else if (orientation == Map.MDO_OBLIQUE) {
+            mapView = new ObliqueMapView(p);
+        } else if (orientation == Map.MDO_SHIFTED) {
+            mapView = new ShiftedMapView(p);
+        } else if (orientation == Map.MDO_STAGGERED) {
+        	mapView = new StaggeredMapView(p);
+        }
+
+        return mapView;
+    }
+
+    // Painting
+
+    /**
+     * Draws all the visible layers of the map. Takes several flags into
+     * account when drawing, and will also draw the grid, and any 'special'
+     * layers.
+     *
+     * @param g the Graphics2D object to paint to
+     * @see javax.swing.JComponent#paintComponent(Graphics)
+     * @see MapLayer
+     * @see SelectionLayer
+     */
+    public void paintComponent(Graphics g) {
+        Graphics2D g2d = (Graphics2D)g.create();
+
+        MapLayer layer;
+        Rectangle clip = g2d.getClipBounds();
+
+        g2d.setStroke(new BasicStroke(2.0f));
+
+        // Do an initial fill with the background color
+        // todo: make background color configurable
+        //try {
+        //    String colorString = displayPrefs.get("backgroundColor", "");
+        //    g2d.setColor(Color.decode(colorString));
+        //} catch (NumberFormatException e) {
+        //}
+        g2d.setColor(DEFAULT_BACKGROUND_COLOR);
+        g2d.fillRect(clip.x, clip.y, clip.width, clip.height);
+        
+        if(background != null){
+        	Rectangle rect = this.getVisibleRect();
+        	g2d.drawImage(background, rect.x, rect.y, rect.x+rect.width, rect.y+rect.height, rect.x, rect.y, rect.x+rect.width, rect.y+rect.height, null);
+        }
+
+        paintSubMap(map, g2d, 1.0f);
+
+        if (!getMode(PF_NOSPECIAL)) {
+            Iterator<MapLayer> li = map.getLayersSpecial();
+
+            while (li.hasNext()) {
+                layer = (MapLayer) li.next();
+                if (layer.isVisible()) {
+                    if (layer instanceof SelectionLayer) {
+                        g2d.setComposite(AlphaComposite.getInstance(
+                                    AlphaComposite.SRC_ATOP, 0.3f));
+                        g2d.setColor(
+                                ((SelectionLayer)layer).getHighlightColor());
+                    }
+                    paintLayer(g2d, (TileLayer)layer);
+                }
+            }
+
+            //Paint Brush
+            if (currentBrush != null) {
+                currentBrush.drawPreview(g2d, this);
+            }
+        }
+
+        // Grid color (also used for coordinates)
+        g2d.setColor(gridColor);
+
+        if (showGrid) {
+            // Grid opacity
+            if (gridOpacity < 255) {
+                g2d.setComposite(AlphaComposite.getInstance(
+                        AlphaComposite.SRC_ATOP,
+                        (float)gridOpacity / 255.0f));
+            } else {
+                g2d.setComposite(AlphaComposite.SrcOver);
+            }
+
+            // Configure grid antialiasing
+            if (antialiasGrid) {
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                        RenderingHints.VALUE_ANTIALIAS_ON);
+            } else {
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                        RenderingHints.VALUE_ANTIALIAS_OFF);
+            }
+
+            g2d.setStroke(new BasicStroke());
+            paintGrid(g2d);
+        }
+
+        if (getMode(PF_COORDINATES)) {
+            g2d.setComposite(AlphaComposite.SrcOver);
+            paintCoordinates(g2d);
+        }
+    }
+
+    public void paintSubMap(MultilayerPlane m, Graphics2D g2d, float mapOpacity) {
+    	Iterator<MapLayer> li = m.getLayers();
+    	MapLayer layer;
+
+    	if (g2d == null) {
+    		g2d = (Graphics2D)getGraphics().create();
+    		g2d.setClip(getVisibleRect());
+    	}
+
+    	while (li.hasNext()) {
+            if ((layer = (MapLayer)li.next()) != null) {
+                float opacity = layer.getOpacity() * mapOpacity;
+                if (layer.isVisible() && opacity > 0.0f) {
+                    if (opacity < 1.0f) {
+                        g2d.setComposite(AlphaComposite.getInstance(
+                                    AlphaComposite.SRC_ATOP, opacity));
+                    } else {
+                        g2d.setComposite(AlphaComposite.SrcOver);
+                    }
+
+                    if (layer instanceof TileLayer) {
+                        paintLayer(g2d, (TileLayer)layer);
+                    } else if (layer instanceof ObjectGroup) {
+                        paintLayer(g2d, (ObjectGroup)layer);
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Draws a TileLayer. Implemented in a subclass.
+     *
+     * @param layer the TileLayer to be drawn
+     */
+    protected abstract void paintLayer(Graphics2D g2d, TileLayer layer);
+
+    /**
+     * Draws an ObjectGroup. Implemented in a subclass.
+     *
+     * @param og    the ObjectGroup to be drawn
+     */
+    protected abstract void paintLayer(Graphics2D g2d, ObjectGroup og);
+
+    protected void paintEdge(Graphics2D g2d, MapLayer layer, int x, int y) {
+        /*
+        Polygon grid = createGridPolygon(x, y, 0);
+        PathIterator itr = grid.getPathIterator(null);
+        double nextPoint[] = new double[6];
+        double prevPoint[], firstPoint[];
+
+        Point p = screenToTileCoords(x, y);
+        int tx = p.x;
+        int ty = p.y;
+
+        itr.currentSegment(nextPoint);
+        firstPoint = prevPoint = nextPoint;
+
+        // Top
+        itr.next();
+        nextPoint = new double[6];
+        itr.currentSegment(nextPoint);
+        if (layer.getTileAt(tx, ty - 1) == null) {
+            g.drawLine(
+                    (int)prevPoint[0], (int)prevPoint[1],
+                    (int)nextPoint[0], (int)nextPoint[1]);
+        }
+
+        // Right
+        itr.next();
+        prevPoint = nextPoint;
+        nextPoint = new double[6];
+        itr.currentSegment(nextPoint);
+        if (layer.getTileAt(tx + 1, ty) == null) {
+            g.drawLine(
+                    (int)prevPoint[0], (int)prevPoint[1],
+                    (int)nextPoint[0], (int)nextPoint[1]);
+        }
+
+        // Left
+        itr.next();
+        prevPoint = nextPoint;
+        nextPoint = new double[6];
+        itr.currentSegment(nextPoint);
+        if (layer.getTileAt(tx, ty + 1) == null) {
+            g.drawLine(
+                    (int)prevPoint[0], (int)prevPoint[1],
+                    (int)nextPoint[0], (int)nextPoint[1]);
+        }
+
+        // Bottom
+        if (layer.getTileAt(tx - 1, ty) == null) {
+            g.drawLine(
+                    (int)nextPoint[0], (int)nextPoint[1],
+                    (int)firstPoint[0], (int)firstPoint[1]);
+        }
+        */
+    }
+
+    /**
+     * Tells this view a certain region of the map needs to be repainted.
+     * <p>
+     * Same as calling repaint() unless implemented more efficiently in a
+     * subclass.
+     *
+     * @param region the region that has changed in tile coordinates
+     */
+    public void repaintRegion(Rectangle region) {
+        repaint();
+    }
+
+    /**
+     * Draws the map grid.
+     */
+    protected abstract void paintGrid(Graphics2D g2d);
+
+    /**
+     * Draws the coordinates on each tile.
+     */
+    protected abstract void paintCoordinates(Graphics2D g2d);
+
+    /**
+     * Returns a Polygon that matches the grid around the specified <b>Map</b>
+     *
+     * @param tx
+     * @param ty
+     * @param border
+     * @return the created polygon
+     */
+    protected abstract Polygon createGridPolygon(int tx, int ty, int border);
+
+    // Conversion functions
+
+    public abstract Point screenToTileCoords(int x, int y);
+    public abstract Point tileToScreenCoords(double x, double y);
+    
+    public abstract void addNeighborPoint(Stack<Point> stack, Point center);
+}

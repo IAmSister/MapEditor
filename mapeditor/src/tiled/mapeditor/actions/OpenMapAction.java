@@ -1,0 +1,75 @@
+/*
+ *  Tiled Map Editor, (c) 2004-2006
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  Adam Turk <aturk@biggeruniverse.com>
+ *  Bjorn Lindeijer <b.lindeijer@xs4all.nl>
+ */
+
+package tiled.mapeditor.actions;
+
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
+
+import tiled.io.MapReader;
+import tiled.mapeditor.MapEditor;
+//import tiled.mapeditor.Resources;
+import tiled.mapeditor.util.TiledFileFilter;
+import tiled.util.TiledConfiguration;
+
+/**
+ * Opens the map open dialog.
+ *
+ * @version $Id: OpenMapAction.java,v 1.1 2007/10/17 07:56:37 gulei Exp $
+ */
+public class OpenMapAction extends AbstractFileAction
+{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private static final String OPEN_ERROR_TITLE = "地图保存失败";//Resources.getString("dialog.saveas.error.title");
+	
+    public OpenMapAction(MapEditor editor, SaveAction saveAction) {
+        super(editor, saveAction,
+              "打开...",//Resources.getString("action.map.open.name"),
+              "打开地图");//Resources.getString("action.map.open.tooltip"));
+
+        putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke("control O"));
+    }
+
+    protected void doPerformAction() {
+        //Start at the location of the most recently loaded map file
+        String startLocation = TiledConfiguration.node("recent").get("file0", "");
+
+        JFileChooser ch = new JFileChooser(startLocation);
+
+        try {
+            MapReader[] readers = editor.getPluginLoader().getReaders();
+            for(int i = 0; i < readers.length; i++) {
+                ch.addChoosableFileFilter(new TiledFileFilter(
+                            readers[i].getFilter(), readers[i].getName()));
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(editor.getAppFrame(),
+                    "加载插件失败: " + e.getLocalizedMessage(),
+                    OPEN_ERROR_TITLE,
+                    JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+
+        ch.addChoosableFileFilter(
+                new TiledFileFilter(TiledFileFilter.FILTER_TMX));
+
+        int ret = ch.showOpenDialog(editor.getAppFrame());
+        if (ret == JFileChooser.APPROVE_OPTION) {
+            editor.loadMap(ch.getSelectedFile().getAbsolutePath());
+        }
+    }
+}

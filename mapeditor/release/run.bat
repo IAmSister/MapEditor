@@ -1,0 +1,1 @@
+java -cp mapeditor-20080410.jar;./plugins/json.jar;./plugins/mappy.jar;./plugins/tmw.jar;./lib.

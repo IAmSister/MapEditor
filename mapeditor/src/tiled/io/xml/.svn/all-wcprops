@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/io/xml
+END
+XMLMapTransformer.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/io/xml/XMLMapTransformer.java
+END
+XMLMapWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/io/xml/XMLMapWriter.java
+END
+XMLWriterException.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/io/xml/XMLWriterException.java
+END
+XMLWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/io/xml/XMLWriter.java
+END

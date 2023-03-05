@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svndata/rpg02/!svn/ver/15999/shared/trunk/MapEditor
+END
+maptool.bat
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svndata/rpg02/!svn/ver/11300/shared/trunk/MapEditor/maptool.bat
+END
+编辑地图流程.xlsx
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svndata/rpg02/!svn/ver/14218/shared/trunk/MapEditor/%E7%BC%96%E8%BE%91%E5%9C%B0%E5%9B%BE%E6%B5%81%E7%A8%8B.xlsx
+END
+tileprocess.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svndata/rpg02/!svn/ver/11551/shared/trunk/MapEditor/tileprocess.py
+END
+maptool.sh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svndata/rpg02/!svn/ver/11289/shared/trunk/MapEditor/maptool.sh
+END
+PVRTexTool
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svndata/rpg02/!svn/ver/11289/shared/trunk/MapEditor/PVRTexTool
+END
+PVRTexTool.exe
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svndata/rpg02/!svn/ver/11264/shared/trunk/MapEditor/PVRTexTool.exe
+END
+地图编辑器使用手册.doc
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svndata/rpg02/!svn/ver/3722/shared/trunk/MapEditor/%E5%9C%B0%E5%9B%BE%E7%BC%96%E8%BE%91%E5%99%A8%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.doc
+END
+场景制作.doc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svndata/rpg02/!svn/ver/14329/shared/trunk/MapEditor/%E5%9C%BA%E6%99%AF%E5%88%B6%E4%BD%9C.doc
+END

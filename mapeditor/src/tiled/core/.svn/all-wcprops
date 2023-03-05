@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/core
+END
+AnimatedTile.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/core/AnimatedTile.java
+END
+ObjectGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/core/ObjectGroup.java
+END
+MapObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/core/MapObject.java
+END
+Sprite.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/core/Sprite.java
+END
+MultilayerPlane.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/core/MultilayerPlane.java
+END
+TileSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/core/TileSet.java
+END
+MapLayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/core/MapLayer.java
+END
+TileLayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/core/TileLayer.java
+END
+LayerLockedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/core/LayerLockedException.java
+END
+Map.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/core/Map.java
+END
+Tile.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/core/Tile.java
+END

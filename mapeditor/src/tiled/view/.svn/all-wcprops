@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/view
+END
+ShiftedMapView.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/view/ShiftedMapView.java
+END
+IsoMapView.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/view/IsoMapView.java
+END
+OrthoMapView.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/view/OrthoMapView.java
+END
+MapView.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/view/MapView.java
+END
+ObliqueMapView.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/view/ObliqueMapView.java
+END
+HexMapView.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/view/HexMapView.java
+END
+StaggeredMapView.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/view/StaggeredMapView.java
+END

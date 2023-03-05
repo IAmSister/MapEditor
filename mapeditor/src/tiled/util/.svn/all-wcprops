@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/util
+END
+Base64.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/util/Base64.java
+END
+TiledProperty.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/util/TiledProperty.java
+END
+TiledConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/util/TiledConfiguration.java
+END
+NumberedSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/util/NumberedSet.java
+END
+TileMergeHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/util/TileMergeHelper.java
+END
+Util.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/util/Util.java
+END
+MersenneTwister.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/util/MersenneTwister.java
+END

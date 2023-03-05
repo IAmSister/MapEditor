@@ -1,0 +1,1 @@
+java -Xms128M -Xmx512M -cp mapeditor-20160510.jar:./lib/poi-3.0.1-FINAL-20070705.jar:./lib/poi-contrib-3.0.1-FINAL-20070705.jar:./lib/poi-scratchpad-3.0.1-FINAL-20070705.jar tiled.mapeditor.MapEditor

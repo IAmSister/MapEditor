@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget
+END
+TButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/TButton.java
+END
+ResizePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/ResizePanel.java
+END
+LayerEditorPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/LayerEditorPanel.java
+END
+BrushBrowser.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/BrushBrowser.java
+END
+TMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/TMenuItem.java
+END
+PrioritiesPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/PrioritiesPanel.java
+END
+TileButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/TileButton.java
+END
+ColorButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/ColorButton.java
+END
+VerticalStaticJPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/VerticalStaticJPanel.java
+END
+IntegerSpinner.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/IntegerSpinner.java
+END
+MiniMapViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/MiniMapViewer.java
+END
+TilePalettePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/TilePalettePanel.java
+END
+ImageViewPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/widget/ImageViewPanel.java
+END

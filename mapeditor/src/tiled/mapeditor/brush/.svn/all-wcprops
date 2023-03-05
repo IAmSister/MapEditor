@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/brush
+END
+Brush.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/brush/Brush.java
+END
+RandomBrush.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/brush/RandomBrush.java
+END
+ShapeBrush.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/brush/ShapeBrush.java
+END
+AbstractBrush.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/brush/AbstractBrush.java
+END
+CustomBrush.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/brush/CustomBrush.java
+END

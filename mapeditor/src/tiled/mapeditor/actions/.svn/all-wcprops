@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svndata/rpg02/!svn/ver/11264/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions
+END
+ResizeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/ResizeAction.java
+END
+OpenRecentAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/OpenRecentAction.java
+END
+SaveThumbnailAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/SaveThumbnailAction.java
+END
+AbstractFileAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/AbstractFileAction.java
+END
+CloseMapAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/CloseMapAction.java
+END
+MergeAllLayersAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/MergeAllLayersAction.java
+END
+MoveLayerUpAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/MoveLayerUpAction.java
+END
+ExitAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/ExitAction.java
+END
+OpenElementFileAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/OpenElementFileAction.java
+END
+OpenPrioritiesFileAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/OpenPrioritiesFileAction.java
+END
+AddObjectLayerAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/AddObjectLayerAction.java
+END
+SetBackAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/SetBackAction.java
+END
+SaveAsAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/SaveAsAction.java
+END
+MergeLayerDownAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/MergeLayerDownAction.java
+END
+AddLayerAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/AddLayerAction.java
+END
+NewMapAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/NewMapAction.java
+END
+ScaleAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/ScaleAction.java
+END
+DelObjectLayerAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/DelObjectLayerAction.java
+END
+MoveLayerDownAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/MoveLayerDownAction.java
+END
+SaveMapFileAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svndata/rpg02/!svn/ver/3528/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/SaveMapFileAction.java
+END
+CloneLayerAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/CloneLayerAction.java
+END
+SplitImageAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svndata/rpg02/!svn/ver/11264/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/SplitImageAction.java
+END
+SaveAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/SaveAction.java
+END
+OpenMapAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/OpenMapAction.java
+END
+DeleteLayerAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/DeleteLayerAction.java
+END
+AbstractLayerAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/AbstractLayerAction.java
+END
+SavePriorityFileAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svndata/rpg02/!svn/ver/812/shared/trunk/MapEditor/mapeditor/src/tiled/mapeditor/actions/SavePriorityFileAction.java
+END
